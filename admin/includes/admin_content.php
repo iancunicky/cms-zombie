@@ -7,7 +7,7 @@
                             ADMIN
                             <small>Subheading</small>
                         </h1>
-					
+			    <p>I'm new here</p>
 						<?php
 
 
