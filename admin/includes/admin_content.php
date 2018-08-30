@@ -7,7 +7,7 @@
                             ADMIN
                             <small>Subheading</small>
                         </h1>
-			    <p>I'm new here</p>
+
 						<?php
 
 
@@ -19,6 +19,8 @@
 						echo $found_user->username;
 
 						$pictures = new Pictures();
+
+            echo $pictures->show();
 						?>
 
                         <ol class="breadcrumb">
