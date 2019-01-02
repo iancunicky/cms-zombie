@@ -11,16 +11,6 @@
 						<?php
 
 
-						// $users = User::find_all_users();
-						// foreach($users as $user){
-							// echo $user->id . "<br/>";
-						// }
-						$found_user = User::find_user_by_id(1);
-						echo $found_user->username;
-
-						$pictures = new Pictures();
-
-            echo $pictures->show();
 						?>
 
                         <ol class="breadcrumb">
