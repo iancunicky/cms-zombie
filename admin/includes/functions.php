@@ -1,5 +1,5 @@
 <?php
-spl_autoload_register('classAutoLoader');
+
 function classAutoLoader($class){
 
 $class = strtolower($class);
@@ -12,5 +12,5 @@ $the_path = "includes/{$class}.php";
 
 }
 
-
+spl_autoload_register('classAutoLoader');
 ?>

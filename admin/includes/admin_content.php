@@ -9,8 +9,19 @@
                         </h1>
 
 						<?php
+            // $found_user = User::find_user_by_id(2);
+            //
+            // $user = User::instantiation($found_user);
+            //
+            // echo $user->username;4
 
+            // $users = User::find_all_users();
+            // foreach ($users as $user) {
+            //   echo $user->id . "<br>";
+            // }
 
+            $found_user = User::find_user_by_id(2);
+            echo $found_user->username;
 						?>
 
                         <ol class="breadcrumb">
