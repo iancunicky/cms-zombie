@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 
+=======
+spl_autoload_register('classAutoLoader');
+>>>>>>> 866f4bb7b662bd5045c37a9f168e7cab5353c326
 function classAutoLoader($class){
 
 $class = strtolower($class);
@@ -12,5 +16,9 @@ $the_path = "includes/{$class}.php";
 
 }
 
+<<<<<<< HEAD
 spl_autoload_register('classAutoLoader');
+=======
+
+>>>>>>> 866f4bb7b662bd5045c37a9f168e7cab5353c326
 ?>

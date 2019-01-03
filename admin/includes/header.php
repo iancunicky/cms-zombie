@@ -1,5 +1,9 @@
 <?php ob_start(); ?>
+<<<<<<< HEAD
 <?php require_once("init.php");?>
+=======
+<?php include("init.php");?>
+>>>>>>> 866f4bb7b662bd5045c37a9f168e7cab5353c326
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,4 +37,8 @@
 
 <body>
 
+<<<<<<< HEAD
     <div id="wrapper">
+=======
+    <div id="wrapper">
+>>>>>>> 866f4bb7b662bd5045c37a9f168e7cab5353c326

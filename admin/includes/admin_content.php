@@ -9,6 +9,7 @@
                         </h1>
 
 						<?php
+<<<<<<< HEAD
             // $found_user = User::find_user_by_id(2);
             //
             // $user = User::instantiation($found_user);
@@ -22,6 +23,20 @@
 
             $found_user = User::find_user_by_id(2);
             echo $found_user->username;
+=======
+
+
+						// $users = User::find_all_users();
+						// foreach($users as $user){
+							// echo $user->id . "<br/>";
+						// }
+						$found_user = User::find_user_by_id(1);
+						echo $found_user->username;
+
+						$pictures = new Pictures();
+
+            echo $pictures->show();
+>>>>>>> 866f4bb7b662bd5045c37a9f168e7cab5353c326
 						?>
 
                         <ol class="breadcrumb">
