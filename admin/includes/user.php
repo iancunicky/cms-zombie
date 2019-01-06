@@ -11,18 +11,15 @@ class User{
 
 
 public static function find_all_users(){
-
 	return self::find_this_query("SELECT * FROM users");
-
-
 }
 
 public static function find_user_by_id($user_id){
 	global $database;
 	$the_result_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
-	return !empty($the_result_array) ? array_shift($the_result_array) : false;
-
+	return !empty($the_result_array) ? array_shift($the_result_array):false;
 }
+
 public static function find_this_query($sql){
 	global $database;
 
@@ -33,13 +30,25 @@ public static function find_this_query($sql){
 		$the_object_array[] = self::instantiation($row);
 	}
 	return $the_object_array;
+}
 
+public static function verify_user($username, $password ) {
+	global $database;
 
+	$username = $database->escape_string($username);
+	$password = $database->escape_string($password);
+
+	$sql = "SELECT * FROM users" . " WHERE ";
+	$sql .= "username = '{$username}' ";
+	$sql .= "AND password = '{$password}' ";
+	$sql .= "LIMIT 1";
+
+	$the_result_array = self::find_this_query($sql);
+	return !empty($the_result_array) ? array_shift($the_result_array) : false;
 }
 
 public static function instantiation($the_record){
 	$the_object = new self;
-
 
 	// $the_object->id					 = $found_user['id'];
 	// $the_object->username		 = $found_user['username'];
@@ -52,22 +61,13 @@ public static function instantiation($the_record){
 			$the_object->$the_attribute = $value;
 		}
 	}
-
-
 	return $the_object;
 }
 
 private function has_the_attribute($the_attribute){
 	$object_properties = get_object_vars($this);
 	return array_key_exists($the_attribute, $object_properties);
-
 }
-
-
-
-
-
-
 
 }
 ?>
