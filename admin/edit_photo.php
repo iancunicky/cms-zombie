@@ -16,14 +16,7 @@ if (empty($_GET['id'])) {
       $photo->save();
     }
   }
-
 }
-
-
-
-
-// $photos = Photo::find_all();
-
  ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
