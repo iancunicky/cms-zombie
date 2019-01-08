@@ -30,7 +30,7 @@ class Database{
 	}
 	private function confirm_query($result){
 		if(!$result){
-			die("Query failed" . $this->connection->error);
+			die("Query failed! " . $this->connection->error);
 		}
 	}
 	public function escape_string($string){
