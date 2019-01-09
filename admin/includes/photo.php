@@ -32,31 +32,29 @@ class Photo extends Db_object{
 
 );
 
-
-
 // This is passing $_FILES['uploaded_file'] as an argument
 
-	public function set_file($file) {
+public function set_file($file) {
 
-		if(empty($file) || !$file || !is_array($file)) {
-		$this->errors[] = "There was no file uploaded here";
-		return false;
+  if(empty($file) || !$file || !is_array($file)) {
+  $this->errors[] = "There was no file uploaded here";
+  return false;
 
-		}elseif($file['error'] !=0) {
+  }elseif($file['error'] !=0) {
 
-		$this->errors[] = $this->upload_errors_array[$file['error']];
-		return false;
+  $this->errors[] = $this->upload_errors_array[$file['error']];
+  return false;
 
-		} else {
-
-
-		$this->filename =  basename($file['name']);
-		$this->tmp_path = $file['tmp_name'];
-		$this->type     = $file['type'];
-		$this->size     = $file['size'];
+  } else {
 
 
-		}
+  $this->filename =  basename($file['name']);
+  $this->tmp_path = $file['tmp_name'];
+  $this->type     = $file['type'];
+  $this->size     = $file['size'];
+
+
+  }
 
 
 
@@ -66,60 +64,60 @@ class Photo extends Db_object{
     return $this->upload_directory.DS.$this->filename;
   }
 
-	public function save() {
+  public function save() {
 
-		if($this->id) {
+    if($this->id) {
 
-			$this->update();
+      $this->update();
 
-		} else {
+    } else {
 
-			if(!empty($this->errors)) {
+      if(!empty($this->errors)) {
 
-				return false;
+        return false;
 
-			}
+      }
 
-			if(empty($this->filename) || empty($this->tmp_path)){
-				$this->errors[] = "the file was not available";
-				return false;
-			}
+      if(empty($this->filename) || empty($this->tmp_path)){
+        $this->errors[] = "the file was not available";
+        return false;
+      }
 
-			$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
-
-
-			if(file_exists($target_path)) {
-				$this->errors[] = "The file {$this->filename} already exists";
-				return false;
+      $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
 
 
-
-			}
-
-			if(move_uploaded_file($this->tmp_path, $target_path)) {
-
-				if(	$this->create()) {
-
-					unset($this->tmp_path);
-					return true;
-
-				}
+      if(file_exists($target_path)) {
+        $this->errors[] = "The file {$this->filename} already exists";
+        return false;
 
 
 
-			} else {
+      }
 
-				$this->errors[] = "the file directory probably does not have permission";
-				return false;
+      if(move_uploaded_file($this->tmp_path, $target_path)) {
 
-			}
+        if(	$this->create()) {
+
+          unset($this->tmp_path);
+          return true;
+
+        }
 
 
-	   }
+
+      } else {
+
+        $this->errors[] = "the file directory probably does not have permission";
+        return false;
+
+      }
+
+
+     }
 
 
 
-	}
+  }
 
 public function delete_photo(){
 
