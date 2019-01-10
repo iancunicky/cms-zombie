@@ -7,6 +7,10 @@ if(empty($_GET['id'])){
   redirect("photos.php");
 }
 
+$comments = Comment::find_the_comments($_GET['id']);
+
+
+
  ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,8 +30,8 @@ if(empty($_GET['id'])){
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">USERS</h1>
-                        <a href="add_user.php" class="btn btn-primary">Add user</a>
+                        <h1 class="page-header">Comments</h1>
+
                         <div class="col-md-12">
                           <table class="table table-hover">
                             <thead>
@@ -44,7 +48,7 @@ if(empty($_GET['id'])){
                                 <td><?php echo $comment->id; ?></td>
                                 <td><?php echo $comment->author; ?>
                                   <div class="actions_links">
-                                    <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
+                                    <a href="delete_comment_photo.php?id=<?php echo $comment->id; ?>">Delete</a>
                                     <a href="edit_comment.php?id=<?php echo $comment->id; ?>">Edit</a>
                                   </div>
                                 </td>

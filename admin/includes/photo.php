@@ -11,7 +11,7 @@ class Photo extends Db_object{
   public $alternate_text;
 	public $type;
   public $size;
-
+  public $count;
 
 
   public $tmp_path;
