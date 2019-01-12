@@ -24,8 +24,8 @@ $comments = Comment::find_all();
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Comments</h1>
-                  
+                        <h1 class="page-header">COMMENTS</h1>
+                        <p class="bg-success"><?php echo $message; ?></p>
                         <div class="col-md-12">
                           <table class="table table-hover">
                             <thead>
@@ -42,7 +42,7 @@ $comments = Comment::find_all();
                                 <td><?php echo $comment->id; ?></td>
                                 <td><?php echo $comment->author; ?>
                                   <div class="actions_links">
-                                    <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
+                                    <a class="delete_link" href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
                                     <a href="edit_comment.php?id=<?php echo $comment->id; ?>">Edit</a>
                                   </div>
                                 </td>

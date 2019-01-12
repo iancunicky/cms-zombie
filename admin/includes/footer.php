@@ -8,9 +8,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- WYSIWYG editor -->
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js">
-
-    </script>
+    <script type="text/javascript" src="js/dropzone.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript">
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawChart);

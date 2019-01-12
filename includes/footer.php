@@ -5,7 +5,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p class="text-center">Copyright &copy;<span id="current-date"></span> NicolaeIancu.com<script>document.getElementById('current-date').innerHTML = new Date().getFullYear();</script></p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
